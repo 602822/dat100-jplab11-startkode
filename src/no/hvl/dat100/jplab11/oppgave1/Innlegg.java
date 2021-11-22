@@ -2,76 +2,84 @@ package no.hvl.dat100.jplab11.oppgave1;
 
 import no.hvl.dat100.jplab11.common.TODO;
 
-public abstract class Innlegg {
-	
-	// TODO - deklarering av objektvariable
-	
-	public Innlegg() {
-		
-	}
-	
-	public Innlegg(int id, String bruker, String dato) {
+public  class Innlegg {
+	private int id;
+	private String bruker;
+	private String dato;
+	private int likes;
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+	public Innlegg() {
+
+	}
+
+	public Innlegg(int id, String bruker, String dato) {
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
 
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
-	
+
 	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+
+		return bruker;
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
-		
+		return dato;
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return id;
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return likes;
 
 	}
-	
-	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+
+	public void doLike() {
+		this.likes = getLikes() + 1;
 	}
-	
+
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		if (innlegg.getId() == this.id) {
+			return true;
+		}
+		return false;
 
 	}
-	
+
 	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
+//		"1\nOle Olsen\n23-10\n7\n"
+		String utstreng = this.getId() + "\n" + getBruker() + "\n" + 
+				getDato() + "\n" + getLikes() + "\n";
+		return utstreng;
+
 	}
-	
+
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		
+
 		throw new UnsupportedOperationException(TODO.method());
-				
+
 	}
 }
